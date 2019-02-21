@@ -19,14 +19,8 @@ public class BookingController {
     BookingRepository bookingRepository;
 
     @GetMapping(value = "/booking/{date}")
-    public List<Booking> findBookingByItsDay(@PathVariable String date){
+    public List<Booking> findBookingByitsDay(@PathVariable String date){
         return bookingRepository.findBookingByDay(date);
     }
 
-
-
-//    @GetMapping(value = "course/{courseId}")
-//    public List<Customer> findCustomerByItsCourses(@PathVariable Long courseId){
-//        return customerRepository.findCustomerByCourse(courseId);
-//    }
 }

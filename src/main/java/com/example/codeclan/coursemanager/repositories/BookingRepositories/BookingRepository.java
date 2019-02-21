@@ -10,5 +10,4 @@ import java.util.List;
 
 @RepositoryRestResource(excerptProjection = EmbeddedDate.class)
 public interface BookingRepository extends JpaRepository<Booking, Long>, BookingRepositoryCustom {
-    List<Booking> findBookingsByDate(String s);
 }

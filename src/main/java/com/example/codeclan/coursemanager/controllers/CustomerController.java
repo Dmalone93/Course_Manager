@@ -26,4 +26,12 @@ public class CustomerController {
     public List<Customer> findCustomerbyCourseTown(@PathVariable String town){
         return customerRepository.findCustomerByCoursesTown(town);
     }
+
+    @GetMapping(value = "/course/town/age/{town}")
+    public List<Customer> findCustomerbyAgeCourseTown(@PathVariable String town){
+        if(age > 25){
+            return customerRepository.findCustomerByAgeAndCoursesTown(town);
+        }
+       return null;
+    }
 }

@@ -69,7 +69,19 @@ public class CoursemanagerApplicationTests {
 
 	@Test
 	public void canFindBookingByDate() {
-		List<Booking> bookings = bookingRepository.findBookingByDay("12/10/2019");
+		List<Booking> bookings = bookingRepository.findBookingByDay("10/12/2019");
 		assertEquals(1, bookings.size());
+	}
+
+	@Test
+	public void canFindCustomerByCoursesTown() {
+		List<Customer> results = customerRepository.findCustomerByCoursesTown("Glasgow");
+		assertEquals(1, results.size());
+	}
+
+	@Test
+	public void canFindCustomerWithCourseIfOverAge() {
+		List<Customer> results = customerRepository.findCustomerByAgeAndCoursesTown("Mearns");
+		assertEquals(1,results.size());
 	}
 }
